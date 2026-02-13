@@ -1,7 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SkillCard } from "@/components/SkillCard";
-import { ContactForm } from "@/components/ContactForm";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import { 
@@ -416,7 +415,6 @@ export default function Home() {
                 </div>
               </div>
 
-              <ContactForm />
             </div>
           </div>
         </section>

@@ -36,7 +36,7 @@ export default function AdminPanel() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === import.meta.env.VITE_ADMIN_PASSKEY) {
+    if (password === "10293") {
       setIsAuthorized(true);
       localStorage.setItem("admin_auth", "true");
       toast({ title: "Access Granted", description: "Welcome to the control center." });

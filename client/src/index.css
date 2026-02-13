@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark Theme Base (Default) */
+  --background: 240 10% 4%;
+  --foreground: 0 0% 98%;
+
+  /* Cyber Green Primary */
+  --primary: 135 70% 50%;
+  --primary-foreground: 240 10% 4%;
+
+  /* Secondary / Muted */
+  --secondary: 240 6% 10%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 240 6% 15%;
+  --muted-foreground: 240 5% 65%;
+
+  /* Accents & Borders */
+  --accent: 135 70% 50%;
+  --accent-foreground: 240 10% 4%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 6% 15%;
+  --input: 240 6% 15%;
+  --ring: 135 70% 50%;
+
+  --radius: 0.25rem;
+}
+
+.light {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+
+  --primary: 142 76% 36%;
+  --primary-foreground: 355 100% 100%;
+
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 142 76% 36%;
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214 32% 85%;
+  --input: 214 32% 85%;
+  --ring: 142 76% 36%;
+}
+
+.light .bg-secondary\/20 {
+  background-color: hsl(210 40% 96% / 0.5);
+}
+
+.light .border-primary\/10 {
+  border-color: hsl(214 32% 85%);
+}
+
+.light .text-muted-foreground {
+  color: hsl(215 16% 35%);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', monospace;
+    @apply font-bold tracking-tight;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full hover:bg-muted-foreground/50 transition-colors;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  }
+  
+  .border-glow {
+    box-shadow: 0 0 15px -3px rgba(0, 255, 65, 0.2);
+  }
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+                      linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  }
+}
